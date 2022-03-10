@@ -1,0 +1,17 @@
+.App {
+  text-align: start;
+  padding: 20px;
+}
+
+.table-of-contents {
+  color: green
+}
+
+.dark {
+  background-color: #333;
+  color: white;
+}
+
+.light {
+  background-color: #fffac5;
+}
