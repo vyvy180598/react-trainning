@@ -1,23 +1,6 @@
-import { Routes, Route, Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './App.css'
-import { HomePage } from './pages/HomePage'
-import { PropsPage } from './pages/PropsPage'
-import { HooksPage } from './pages/HooksPage'
-import { UseStateComp } from './components/UseStateComp'
-import { UseEffectComp } from './components/UseEffectComp'
-import { UseLayoutEffectComp } from './components/UseLayoutEffectComp'
-import { UseRefComp } from './components/UseRefComp'
-import { UseCallbackComp } from './components/UseCallbackComp'
-import { UseMemoComp } from './components/UseMemoComp'
-import { UseReducerComp } from './components/UseReducerComp'
-import { UseContextComp } from './components/UseContextComp'
-import { GlobalContextTodoPage } from './pages/GlobalContextTodoPage'
-import { UseImperativeHandleComp } from './components/UseImperativeHandleComp'
-import { ProtectedPage } from './pages/ProtectedPage'
-import { RequireAuth } from './components/RequireAuth'
-import { LoginPage } from './pages/LoginPage'
-import { UsersPage } from './pages/UsersPage'
-import { User } from './components/User'
+import routes from './routes'
 
 function App() {
   return (
@@ -26,6 +9,9 @@ function App() {
         <ul>
           <li>
             <Link to="/">Home Page</Link>
+          </li>
+          <li>
+            <Link to="/reservations">Reservations Page</Link>
           </li>
           <li>
             <Link to="/props">Props Example</Link>
@@ -41,11 +27,11 @@ function App() {
           </li>
           <li>
           <Link to="/protected">Protected Page</Link>
-        </li>
+          </li>
         </ul>
       </nav>
-
-      <Routes>
+      {routes()}
+      {/* <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="props" element={<PropsPage />} />
         <Route path="hooks" element={<HooksPage />}>
@@ -73,7 +59,6 @@ function App() {
           <Route path=":userId" element={<User />} />
         </Route>
 
-        {/* No match route */}
         <Route
           path="*"
           element={
@@ -82,7 +67,7 @@ function App() {
             </main>
           }
         />
-      </Routes>
+      </Routes> */}
     </div>
   )
 }

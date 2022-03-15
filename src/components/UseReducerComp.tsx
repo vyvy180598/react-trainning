@@ -10,7 +10,6 @@
 
 import { useReducer } from 'react'
 import { TodoAppUseReducer } from './TodoAppUseReducer'
-import { toast } from 'react-toastify'
 
 // 1. Init state
 const initState = 0
@@ -21,16 +20,7 @@ const DOWN_ACTION = 'down'
 
 // 3. Reducer
 const reducer = (state: number, action: string) => {
-  toast.info('reducer running...', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('reducer running...')
 
   switch (action) {
     case UP_ACTION:

@@ -1,6 +1,13 @@
-export { default as StoreProvider } from './Provider'
-export { default as StoreContext } from './Context'
+import { configureStore } from '@reduxjs/toolkit'
+import reservationsReducer from './reservations/reducer'
+import customersReducer from './customers/reducer'
 
-export * from './hooks'
+export const store = configureStore({
+  reducer: {
+    reservations: reservationsReducer,
+    customers: customersReducer
+  }
+})
 
-export * as actions from './actions'
+export type RootState = ReturnType<typeof store.getState>
+export type AppDispacth = typeof store.dispatch

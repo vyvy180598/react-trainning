@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 
 // Global Context -> Giống Redux concept
-import { useStore, actions } from '../store'
+import { useStore, actions } from '../store-context-reducer'
 
 
 export const GlobalContextTodoPage = () => {

@@ -5,21 +5,11 @@
 // 3. Consumer
 
 import { useState, createContext, useContext, memo } from "react"
-import { toast } from 'react-toastify'
 
 const ThemeContext = createContext<string>('light')
 
 const Content = memo(() => {
-  toast.info('re-render content', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('re-render content...')
 
   return (
     <div>
@@ -32,16 +22,7 @@ const Content = memo(() => {
 })
 
 const Paragraph = () => {
-  toast.info('re-render paragraph', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('re-render paragraph...')
 
   const theme = useContext(ThemeContext)
 
@@ -58,16 +39,7 @@ export const UseContextComp = () => {
     setTheme(theme === 'dark' ? 'light' : 'dark')
   }
 
-  toast.info('re-render comp', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('re-render comp...')
 
   return (
     <ThemeContext.Provider value={theme}>

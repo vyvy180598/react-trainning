@@ -1,7 +1,6 @@
 // Dùng để tránh thực hiện lại logic không cần thiết
 
 import { useMemo, useRef, useState } from 'react';
-import { toast } from 'react-toastify'
 
 export function UseMemoComp() {
   const [name, setName] = useState('');
@@ -24,16 +23,7 @@ export function UseMemoComp() {
   };
 
   const total = useMemo(() => {
-    toast.info('Tính toán lại', {
-      position: 'top-right',
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      pauseOnFocusLoss: true
-    })
+    console.log('Tính toán lại...')
 
     return products.reduce((result, prod) => result + prod.price, 0);
   }, [products]);

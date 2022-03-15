@@ -10,7 +10,7 @@ export const ProtectedPage = () => {
 
   return (
     <>
-      <h2 className="text-primary">Welcome to Protected page</h2>
+      <h2 className="text-success">Welcome to Protected page</h2>
       <button onClick={handleLogout}>Click me to logout!</button>
     </>
   )

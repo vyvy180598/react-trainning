@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { toast } from 'react-toastify';
 
 export function UseRefComp() {
   const [count, setCount] = useState(60);
@@ -15,8 +16,17 @@ export function UseRefComp() {
 
   useEffect(() => {
     const rect = h2Ref.current.getBoundingClientRect();
-    console.log(rect);
-  });
+    toast.info(`rect DOM - width: ${rect.width}, height - ${rect.height}`, {
+      position: 'top-right',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      pauseOnFocusLoss: true
+    })
+  }, []);
 
   const handleStart = () => {
     setIsStart(true);

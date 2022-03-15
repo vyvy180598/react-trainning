@@ -6,19 +6,27 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import 'bootstrap/dist/css/bootstrap.css'
 import './custom.scss'
-import { StoreProvider } from './store'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+
+// Store with context and useReducer
+import { StoreProvider } from './store-context-reducer'
+// Store with Redux
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 localStorage.setItem('isAuth', 'false')
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <StoreProvider>
-        <App />
-        <ToastContainer newestOnTop={true} limit={5}/>
-      </StoreProvider>
+      <Provider store={store}>
+        {/* Store concept with Context and useReducer() */}
+        <StoreProvider>
+          <App />
+          <ToastContainer newestOnTop={true} limit={5}/>
+        </StoreProvider>
+      </Provider>
     </Router>
   </React.StrictMode>,
   document.getElementById('root')

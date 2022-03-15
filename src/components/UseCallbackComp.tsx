@@ -6,7 +6,6 @@
 import React, {
   useState, memo, useCallback
 } from 'react';
-import { toast } from 'react-toastify'
 // Hooks
 // HOC
 // Render props
@@ -14,16 +13,7 @@ import { toast } from 'react-toastify'
 // Dùng memo khi 1 component sử dụng nhiều con và cần xác định re-render có ảnh hưởng perfomance
 
 const ContentMemo = memo((props: { countUp: number }) => {
-  toast.info('re-render count up', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('re-render count up...')
   return (
     <h2 className="text-danger" style={{border: '1px solid', padding: '20px'}}>
       This line use count up state and it'll re-render:
@@ -35,16 +25,7 @@ const ContentMemo = memo((props: { countUp: number }) => {
 const ContentMemoWithCallback = memo((props: {
   onDecrease: React.MouseEventHandler<HTMLButtonElement>
 }) => {
-  toast.info('re-render count down', {
-    position: 'top-right',
-    autoClose: 5000,
-    hideProgressBar: false,
-    closeOnClick: true,
-    pauseOnHover: true,
-    draggable: true,
-    progress: undefined,
-    pauseOnFocusLoss: true
-  })
+  console.log('re-render count down...')
   return (
     <div style={{border: '1px solid', padding: '20px', marginTop: '20px'}}>
       <h2>Use Callback</h2>
